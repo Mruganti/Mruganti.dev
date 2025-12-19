@@ -1,0 +1,732 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #ffffff; /* Pure white text for contrast */
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #006d77) fixed; /* Dark blue to teal gradient for body */
+  background-image: 
+    linear-gradient(135deg, #0d1b2a, #1b263b, #006d77),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" opacity="0.1"><text x="10" y="20" font-size="12" fill="#00ffcc">0101</text><text x="30" y="40" font-size="12" fill="#00ffcc">1010</text><line x1="0" y1="50" x2="100" y2="50" stroke="#00ffcc" stroke-width="0.5" opacity="0.2"/></svg>');
+  background-blend-mode: overlay;
+  background-size: cover, 100px 100px;
+  background-repeat: no-repeat, repeat;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Navigation */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(13, 27, 42, 0.9); /* Matches new theme with transparency */
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00ffcc; /* Teal accent */
+  text-decoration: none; /* Remove underline from link */
+  padding: 8px 15px; /* Add padding to make it look like a button */
+  border: 2px solid #00ffcc; /* Add a subtle border to enhance button look */
+  border-radius: 5px; /* Rounded corners */
+  transition: background 0.3s, color 0.3s, transform 0.3s; /* Smooth transitions */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between elements */
+}
+
+.logo:hover {
+  background: #00ffcc; /* Teal background on hover */
+  color: #1a1a1a; /* Dark text on hover for contrast */
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.logo:hover .code-symbol,
+.logo:hover .home-icon {
+  color: #1a1a1a; /* Ensure symbols and icon change color on hover */
+}
+
+/* Styles for </> Symbols */
+.code-symbol {
+  font-size: 1.2rem; /* Slightly smaller than the logo text */
+  color: #55ff55; /* Green to evoke a coding theme */
+  font-weight: 400; /* Lighter weight for contrast */
+}
+
+/* Styles for Home Icon */
+.home-icon {
+  width: 16px;
+  height: 16px;
+  color: #00ffcc; /* Teal to match */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ffcc; /* Teal on hover */
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)) fixed; /* Dark slate gradient */
+  background-image: 
+    linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9)),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" opacity="0.3"><text x="20" y="30" font-size="14" fill="#ffffff" opacity="0.5">HTML</text><text x="150" y="50" font-size="14" fill="#ffffff" opacity="0.5">CSS</text><text x="40" y="100" font-size="20" fill="#ff5555" opacity="0.6"><</text><text x="150" y="120" font-size="20" fill="#55ff55" opacity="0.6">></text><text x="80" y="160" font-size="14" fill="#ffffff" opacity="0.5">JS</text><circle cx="30" cy="180" r="5" fill="#ffaa55" opacity="0.4"/><circle cx="170" cy="20" r="5" fill="#55aaff" opacity="0.4"/></svg>'); /* Scattered code elements */
+  background-blend-mode: overlay;
+  background-size: cover, 200px 200px; /* Gradient covers, pattern tiles */
+  background-repeat: no-repeat, repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden; /* Prevent overflow of pseudo-elements */
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 85, 85, 0.3), transparent); /* Red splash */
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(85, 170, 255, 0.3), transparent); /* Blue splash */
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1; /* Ensure content stays above pseudo-elements */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  color: #00ffcc; /* Teal heading */
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Base button (unchanged) */
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #00ffcc;
+  color: #1a1a1a;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #33ffeb;
+}
+
+/* CV button */
+.cv-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 14px 34px;
+  border-radius: 28px;
+  background-color: #00BFA5;     /* teal button */
+  color: #ffffff;                 /* white text for strong contrast */
+  text-align: center;
+  border: 2px solid #00FFCC;      /* bright teal outline */
+  box-shadow: 0 6px 16px rgba(0, 191, 165, 0.25);
+  font-weight: 800;
+  font-size: 16px;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  letter-spacing: 0.2px; /* optional: crisper look */
+}
+.cv-btn:hover {
+  background-color: #00A690;      /* slightly darker teal */
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(0, 191, 165, 0.35);
+}
+
+.cv-btn, .cv-btn:link, .cv-btn:visited {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+/* Section Styles */
+.section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+  min-height: 200px;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  color: #00ffcc; /* Teal headings */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.card {
+  background: #1a3c5e; /* Muted teal-blue card background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  border: 1px solid #00ffcc; /* Teal border for contrast */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card p, .card ul {
+  margin-top: 10px;
+  color: #ffffff; /* Ensure text is white for readability */
+}
+
+.card ul {
+  list-style: circle;
+  margin-left: 20px;
+}
+
+/* Updated Link Styles for Card Sections */
+.card a {
+  color: #1e90ff; /* Light blue for better visibility */
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #00b7eb; /* Brighter cyan on hover for contrast */
+}
+
+/* Contact Links */
+#contact a {
+  color: #00ffcc; /* Teal links */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#contact a:hover {
+  color: #ff6b6b; /* Coral on hover */
+}
+
+/* Skills Section */
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min-width from 250px to 300px */
+  gap: 25px; /* Increased gap for more space between boxes */
+  padding: 25px; /* Increased padding for the grid container */
+}
+
+.skill-category {
+  background: linear-gradient(135deg, #1a3c5e, #0d1b2a);
+  padding: 20px; /* Increased padding from 15px to 20px */
+  border-radius: 15px;
+  border: 1px solid #00ffcc;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-category h3 {
+  color: #00ffcc;
+  margin-bottom: 12px; /* Slightly increased margin */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skill-category span {
+  display: inline-block;
+  background: #ff6b6b;
+  color: #ffffff;
+  padding: 8px 12px;
+  margin: 6px; /* Increased margin from 5px for more space between tags */
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.skill-category span:hover {
+  background: #ff8787;
+  transform: scale(1.05);
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b, #006d77); /* Matches body gradient */
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+/* Heart Symbol in Footer */
+.heart {
+  width: 16px;
+  height: 16px;
+  fill: #ff5555 !important; /* Red heart, enforce with !important */
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.heart:hover {
+  transform: scale(1.2); /* Slight scale effect on hover */
+}
+
+/* Back to Top Button */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #00ffcc; /* Teal background */
+  color: #1a1a1a; /* Dark text/icon for contrast */
+  border: none;
+  border-radius: 50%; /* Circular button */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Hidden by default */
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+#back-to-top.show {
+  opacity: 1; /* Visible when scrolling */
+  visibility: visible;
+}
+
+#back-to-top:hover {
+  background: #ff6b6b; /* Coral on hover */
+  color: #ffffff; /* White icon on hover */
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+#back-to-top svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adjust Scroll Margin for Sticky Navbar */
+.section {
+  scroll-margin-top: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .nav-links {
+    margin-top: 10px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .tagline {
+    font-size: 1.2rem;
+  }
+  .hero::before,
+  .hero::after {
+    width: 100px;
+    height: 100px; /* Smaller splashes on mobile */
+  }
+  #back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+  #back-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+  /* About Timeline */
+.about-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px 0; /* Add vertical padding to the timeline container */
+}
+
+.timeline-item {
+  background: #1a3c5e;
+  padding: 25px; /* Increased padding for more internal space */
+  border-radius: 15px;
+  margin-bottom: 30px; /* Increased margin between items for spacing */
+  border-left: 4px solid #00ffcc;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 25px; /* Adjusted to match increased padding */
+  width: 12px;
+  height: 12px;
+  background: #00ffcc;
+  border-radius: 50%;
+}
+
+.timeline-title {
+  color: #00ffcc;
+  margin-bottom: 15px; /* Increased margin below title */
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-title i {
+  font-size: 1.2rem;
+}
+
+.timeline-content {
+  display: none;
+  padding-left: 20px;
+}
+
+.timeline-item:hover .timeline-content {
+  display: block;
+}
+
+.role-list {
+  list-style: circle;
+  margin-left: 20px;
+  margin-top: 10px; /* Add space above the list */
+}
+
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Increased gap between badges */
+}
+
+.tech-badges span {
+  background: #ff6b6b;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Typing Animation (unchanged, but included for context) */
+.typing-text {
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #00ffcc;
+  animation: blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+/* Research Papers Section */
+.research-list {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+}
+
+.research-item {
+  background: #1a3c5e; /* Muted teal-blue card background */
+  padding: 15px;
+  border-radius: 15px;
+  border: 1px solid #00ffcc; /* Teal border */
+  transition: transform 0.3s;
+}
+
+.research-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+}
+
+.research-item h3 {
+  color: #00ffcc; /* Teal for titles */
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.research-item h3 a {
+  color: #00ffcc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.research-item h3 a:hover {
+  color: #ff6b6b; /* Coral on hover for links */
+}
+
+.research-item p {
+  color: #ffffff; /* White text for descriptions */
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* WhatsApp Job Group Section */
+.whatsapp-card {
+  background: linear-gradient(135deg, #1a3c5e, #0d1b2a);
+  border: 2px solid #00ffcc;          /* teal border */
+  border-radius: 15px;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.whatsapp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,255,204,.3);
+}
+
+/* Icon */
+.group-icon {
+  font-size: 3rem;
+  color: #00ffcc;                     /* teal */
+  flex-shrink: 0;
+}
+
+/* Layout */
+.whatsapp-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+}
+.whatsapp-text p {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Join button – teal (same as your other .btn) */
+.whatsapp-btn {
+  background: #00ffcc;
+  color: #1a1a1a;
+  padding: 12px 24px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background .3s, transform .3s;
+  display: inline-block;
+}
+.whatsapp-btn:hover {
+  background: #33ffeb;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .whatsapp-content { flex-direction: column; text-align:center; gap:15px; }
+  .group-icon { font-size:2.5rem; }
+}
+
+/* Part-time MCA/MBA Guidance Section */
+.guidance-card {
+  background: linear-gradient(135deg, #1a3c5e, #0d1b2a);
+  border: 2px solid #00ffcc;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.guidance-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,255,204,.3);
+}
+
+.guidance-content {
+  display: flex;
+  align-items: center;
+  padding: 25px;
+  gap: 25px;
+}
+
+.guidance-icon {
+  font-size: 3.2rem;
+  color: #00ffcc;
+  flex-shrink: 0;
+}
+
+.guidance-text p {
+  color: #ffffff;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.contact-info {
+  background: rgba(0,255,204,0.1);
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.contact-info i {
+  color: #00ffcc;
+  margin-right: 8px;
+}
+
+.phone-link {
+  color: #00ffcc;
+  text-decoration: none;
+  font-weight: 600;
+}
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+.guidance-btn {
+  background: #00ffcc;
+  color: #1a1a1a;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+.guidance-btn:hover {
+  background: #33ffeb;
+  transform: scale(1.05);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .guidance-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .guidance-icon { font-size: 2.8rem; }
+}
+
+.two-options {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.big-option-btn {
+  flex: 1 1 300px;
+  max-width: 380px;
+  padding: 20px 30px;
+  border-radius: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s;
+}
+
+.whatsapp-option {
+  background: #00ffcc;
+  color: #1a1a1a;
+  border: 2px solid #00ffcc;
+}
+
+.whatsapp-option:hover {
+  background: #33ffeb;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,255,204,0.3);
+}
+
+.guidance-option {
+  background: #D7BEA8;           /* your light brown you liked */
+  color: #ffffff;
+  border: 2px solid #00ffcc;
+}
+
+.guidance-option:hover {
+  background: #E0C7B2;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(215,190,168,0.3);
+}
+
+/* mobile – one below the other */
+@media (max-width: 768px) {
+  .two-options { flex-direction: column; }
+}
+
+}
