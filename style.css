@@ -1109,3 +1109,125 @@ footer {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================
+   MOBILE SPACING FIX ONLY
+   ========================= */
+@media (max-width: 768px) {
+
+  /* Reduce big space in hero section */
+  .hero {
+    padding: 28px 18px 20px;
+  }
+
+  .hero-inner {
+    gap: 18px;
+  }
+
+  .hero-text-col {
+    min-width: 0;
+  }
+
+  .hero-headline {
+    margin-bottom: 8px;
+  }
+
+  .hero-subline {
+    margin-bottom: 0;
+  }
+
+  /* Reduce space before intro section */
+  .intro {
+    margin: 34px auto;
+    padding: 0 22px;
+  }
+
+  /* Reduce all major section vertical gaps on mobile */
+  .work,
+  .projects,
+  .credentials,
+  .side-ctas,
+  .contact {
+    margin: 42px auto;
+  }
+
+  /* Reduce stack section spacing */
+  .stack {
+    padding: 42px 22px;
+  }
+
+  .stack-icons {
+    margin-bottom: 34px;
+  }
+
+  /* Reduce project card spacing */
+  .projects {
+    gap: 38px;
+  }
+
+  .project-row,
+  .project-row.reverse {
+    gap: 22px;
+  }
+
+  /* Reduce project frame height/spacing */
+  .project-frame {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .frame-body {
+    padding: 22px;
+    gap: 10px;
+  }
+
+  .frame-block {
+    height: 70px;
+  }
+
+  /* Reduce marquee gap */
+  .marquee {
+    margin: 42px 0;
+  }
+
+  /* Reduce section title spacing */
+  .section-title {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero {
+    padding: 22px 16px 16px;
+  }
+
+  .intro {
+    margin: 28px auto;
+  }
+
+  .work,
+  .projects,
+  .credentials,
+  .side-ctas,
+  .contact {
+    margin: 34px auto;
+  }
+
+  .projects {
+    gap: 30px;
+  }
+
+  .project-row,
+  .project-row.reverse {
+    gap: 18px;
+  }
+
+  .stack {
+    padding: 34px 18px;
+  }
+
+  .marquee {
+    margin: 34px 0;
+  }
+}
